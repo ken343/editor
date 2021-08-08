@@ -17,11 +17,11 @@
 
 ;; Initialize package sources
 (require 'package)
-
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")))
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
 
 ;; Make sure to reload a package unless it exists already
-(package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
 
